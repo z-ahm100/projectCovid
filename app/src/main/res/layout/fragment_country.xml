@@ -1,17 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".Fragments.CountryFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.CountryFragment"
+    android:background="@color/back_org"
+    android:layoutDirection="rtl">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:text="country" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/tv_search"
+                    android:hint="جستجو..."
+                    android:textColorHint="@color/white"
+                    android:layout_marginTop="8dp"
+                    android:paddingRight="8dp"
+                    android:drawablePadding="8dp"
+                    android:background="@drawable/bg_sea_to"
+                    android:drawableRight="@drawable/ic_baseline_search_24"
+                    />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    android:layout_below="@id/tv_search"
+                    android:layout_marginTop="16dp"
+                    >
+                    <RelativeLayout
+                        android:id="@+id/Heider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#0058B6"
+                        android:padding="6dp"
+                        tools:ignore="InvalidId">
+
+                        <ImageView
+                            android:id="@+id/img1"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_marginRight="8dp"
+                            android:src="@drawable/covidper"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_toLeftOf="@id/img1"
+                            android:lineSpacingExtra="4dp"
+                            android:text="امار منتشر شده در این سایت بر اساس امار منتشر شده "
+                            android:textColor="@color/teal_700"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardview1"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/recyc_coun"
+                    />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
 
 </RelativeLayout>

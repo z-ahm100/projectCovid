@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 title1.setText("کشورها");
 
                 break;
+
         }
 
 
